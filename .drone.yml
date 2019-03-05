@@ -5,7 +5,8 @@ steps:
 - name: website
   image: plugins/docker
   settings:
-    repo: shrivara/shrivara-dev:latest
+    repo: shrivara/shrivara-dev
+    tags: latest
     username:
       from_secret: docker_username
     password:
