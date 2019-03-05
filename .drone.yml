@@ -5,4 +5,4 @@ steps:
 - name: website
   image: plugins/docker
   commands:
-  - docker build -t=shrivara/shrivara-dev:latest
+  - docker build . -t=shrivara/shrivara-dev:latest
