@@ -1,0 +1,8 @@
+kind: pipeline
+name: default
+
+steps:
+- name: website
+  image: plugins/docker
+  commands:
+  - docker build -t=shrivara/shrivara-dev:latest
