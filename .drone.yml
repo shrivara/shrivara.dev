@@ -4,5 +4,9 @@ name: default
 steps:
 - name: website
   image: plugins/docker
-  commands:
-  - docker build . -t=shrivara/shrivara-dev:latest
+  settings:
+    repo: shrivara/shrivara-dev:latest
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
