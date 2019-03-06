@@ -1,18 +1,16 @@
 kind: pipeline
 name: default
-
 steps:
-- name: setup_tag_name
-  image: alpine/git
-  commands:
-    - echo -n "$(git rev-parse --short HEAD),latest" > .tags
-
-- name: build
-  image: plugins/docker
-  settings:
-    repo: shrivara/shrivara-dev
-    tags: latest
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+  - name: setup_tag_name
+    image: alpine/git
+    commands:
+      - echo -n "$(git rev-parse --short HEAD),latest" > .tags
+  - name: build
+    image: plugins/docker
+    settings:
+      repo: shrivara/shrivara-dev
+      tags: latest
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
