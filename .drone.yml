@@ -14,3 +14,8 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
+  - name: deploy
+    image: wernight/kubectl
+    commands:
+      - echo ${KUBE_CONFIG} > kubeconfig.yaml
+      - kubectl --kubeconfig="kubeconfig.yaml" get nodes
