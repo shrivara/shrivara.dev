@@ -1,8 +1,2 @@
-FROM alpine:3.9
-
-WORKDIR /html
-ADD . /html
-
-RUN apk add python
-
-CMD python -m SimpleHTTPServer
+FROM nginx:1.15.9
+COPY . /usr/share/nginx/html
