@@ -1,0 +1,2 @@
+export DRONE_SERVER=https://cloud.drone.io
+export DRONE_TOKEN=nanananannananananananananananana

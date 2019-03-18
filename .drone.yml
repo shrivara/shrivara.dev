@@ -34,5 +34,5 @@ steps:
       - echo "$KUBE_CONFIG" > kubeconfig.yaml
       - kubectl --kubeconfig="kubeconfig.yaml" -n shrivara-dev set image deployment/deployment shrivara-dev=shrivara/shrivara-dev:$(cat .short_tag)
     when:
-      event: deployment
-      environment: production
+      event: promote
+      target: production
