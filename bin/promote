@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eo pipefail
+BASE_DIR=$(dirname "$0")
+
+BUILD_ID="$1"
+ENVIRONMENT="$2"
+source "${BASE_DIR}/../.envs"
+
+if [[ -z "$BUILD_ID" ]] || [[ -z "$ENVIRONMENT" ]]; then echo "Usage: promote <BUILD_ID> <ENVIRONMENT>"; exit 1; fi
+drone build promote shrivara/shrivara.dev $BUILD_ID $ENVIRONMENT
